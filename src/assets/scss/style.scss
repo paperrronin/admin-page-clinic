@@ -1,0 +1,10 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+/* Importing Bootstrap SCSS file. */
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+
+@import "./pages/auth";
+@import "./fonts/fontawesome/fontawesome.scss";
+@import "./fonts/fontawesome/regular.scss";
+@import "./fonts/fontawesome/solid.scss";
+@import "./fonts/fontawesome/brands.scss";
