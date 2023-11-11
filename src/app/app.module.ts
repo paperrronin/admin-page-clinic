@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthenticationModule } from './authentication/authentication/authentication.module';
+import { AuthenticationModule } from './authentication//authentication.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
