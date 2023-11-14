@@ -9,11 +9,13 @@ import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { AuthenticationRoutingModule } from "./authentication-routing.module";
+import { SigninComponent } from './signin/signin.component';
 
 
 @NgModule({
   declarations: [
-    SignupComponent
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     CommonModule,
