@@ -128,4 +128,37 @@
     }
   }
 
+  // 404
+  .centered, p.large.centered {
+    text-align: center;
+    padding: 65px 0 65px 0;
+}
+
+.container-404{
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-right: auto;
+   margin-left: auto;
+  //  font-family: 'Montserrat', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  img {
+    max-width: 100%;
+  }
+
+  h1{
+    font-size: 36px;
+  }
+
+  .text-block-narrow {
+    font-size: 22px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 28px;
+    font-weight: 300;
+}
+} 
+
   
