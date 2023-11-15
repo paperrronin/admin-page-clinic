@@ -128,6 +128,32 @@
     }
   }
 
+  .alert{
+    color: #fff!important;
+    border: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .alert-danger {
+    background-color: #ff3636cc;
+  }
+
+  .border-btn-when-alert{
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+  }
+
+  .mat-mdc-raised-button {
+    box-shadow: none !important;
+  }
+
+  .mat-mdc-form-field-icon-suffix .mat-icon {
+    padding: 12px;
+    box-sizing: content-box;
+    color: black;
+  }
+
   // 404
   .centered, p.large.centered {
     text-align: center;

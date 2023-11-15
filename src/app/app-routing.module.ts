@@ -13,7 +13,7 @@ const routes: Routes = [
         (m) => m.AuthenticationModule
       ),
   },
-  { path: '**', component: Page404Component },
+  { path: '**', component: SigninComponent },
 ];
 
 @NgModule({
