@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SigninComponent } from './authentication/signin/signin.component';
 import { AuthLayoutComponent } from './layout/app-layout/auth-layout/auth-layout.component';
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
         (m) => m.AuthenticationModule
       ),
   },
+  { path: '**', component: SigninComponent },
 ];
 
 @NgModule({
