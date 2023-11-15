@@ -10,12 +10,14 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { AuthenticationRoutingModule } from "./authentication-routing.module";
 import { SigninComponent } from './signin/signin.component';
+import { Page404Component } from './page404/page404.component';
 
 
 @NgModule({
   declarations: [
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    Page404Component
   ],
   imports: [
     CommonModule,

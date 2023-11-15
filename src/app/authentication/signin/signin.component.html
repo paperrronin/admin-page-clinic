@@ -1,7 +1,7 @@
 <div class="auth-container">
     <div class="row auth-main">
       <div class="col-sm-6 px-0 d-none d-sm-block">
-        <div class="left-img" style="background-image: url(assets/images/bg3.svg);">
+        <div class="left-img" style="background-image: url(assets/images/pages/bg3.svg);">
         </div>
       </div>
       <div class="col-sm-6 auth-form-section">
@@ -65,7 +65,7 @@
               <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
               <div class="container-auth-form-btn">
                 <div style="text-align:center">
-                  <button mat-raised-button color="primary" [class.auth-spinner]="loading" [disabled]="loading"
+                  <button mat-raised-button color="primary" [class.border-btn-when-alert] = "error" [class.auth-spinner]="loading" [disabled]="loading"
                     class="auth-form-btn" [disabled]="!authForm.valid " type="submit">Login</button>
                 </div>
               </div>

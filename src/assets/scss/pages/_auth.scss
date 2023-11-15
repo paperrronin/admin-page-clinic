@@ -128,4 +128,123 @@
     }
   }
 
+  .alert{
+    color: #fff!important;
+    border: none;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .alert-danger {
+    background-color: #ff3636cc;
+    -webkit-animation: shake-vertical 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: shake-vertical 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  }
+
+  @-webkit-keyframes shake-vertical {
+    0%,
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateY(-8px);
+              transform: translateY(-8px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateY(8px);
+              transform: translateY(8px);
+    }
+    80% {
+      -webkit-transform: translateY(6.4px);
+              transform: translateY(6.4px);
+    }
+    90% {
+      -webkit-transform: translateY(-6.4px);
+              transform: translateY(-6.4px);
+    }
+  }
+  @keyframes shake-vertical {
+    0%,
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateY(-8px);
+              transform: translateY(-8px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateY(8px);
+              transform: translateY(8px);
+    }
+    80% {
+      -webkit-transform: translateY(6.4px);
+              transform: translateY(6.4px);
+    }
+    90% {
+      -webkit-transform: translateY(-6.4px);
+              transform: translateY(-6.4px);
+    }
+  }
+  
+
+  .border-btn-when-alert{
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+  }
+
+  .mat-mdc-raised-button {
+    box-shadow: none !important;
+  }
+
+  .mat-mdc-form-field-icon-suffix .mat-icon {
+    padding: 12px;
+    box-sizing: content-box;
+    color: black;
+  }
+
+  // 404
+  .centered, p.large.centered {
+    text-align: center;
+    padding: 65px 0 65px 0;
+}
+
+.container-404{
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-right: auto;
+   margin-left: auto;
+  //  font-family: 'Montserrat', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  img {
+    max-width: 100%;
+  }
+
+  h1{
+    font-size: 36px;
+  }
+
+  .text-block-narrow {
+    font-size: 22px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 28px;
+    font-weight: 300;
+}
+} 
+
   

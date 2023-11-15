@@ -16,7 +16,7 @@ export class SigninComponent
   authForm: FormGroup;
   submitted = false;
   loading = false;
-  error = "";
+  error = undefined;
   hide = true;
   constructor(
     private formBuilder: FormBuilder,
@@ -75,11 +75,13 @@ export class SigninComponent
                 this.loading = false;
               }, 1000);
             } else {
-              this.error = "Invalid Login";
+              this.error = "Login or password is incorrect!";
+              console.log(this.error)
             }
           },
           (error) => {
-            this.error = error;
+            this.error = "Login or password is incorrect!";
+
             this.submitted = false;
             this.loading = false;
           }
