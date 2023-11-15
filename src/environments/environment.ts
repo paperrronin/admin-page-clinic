@@ -5,7 +5,7 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:4200',
+    apiUrl: 'https://5ad4a868524f0a13.mokky.dev',
   };
   
   /*

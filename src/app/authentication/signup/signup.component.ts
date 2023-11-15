@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/core/service/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
+  data:Observable<string>;
   authForm: FormGroup;
   submitted = false;
   returnUrl: string;
@@ -16,7 +19,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private auth:AuthService
   ) {}
   ngOnInit() {
     this.authForm = this.formBuilder.group({
@@ -40,7 +44,12 @@ export class SignupComponent implements OnInit {
     if (this.authForm.invalid) {
       return;
     } else {
+      // console.log(this.authForm.value)
+      this.auth.register(this.authForm.value.username,this.authForm.value.email,this.authForm.value.password).subscribe(
+        date => {
+      //  console.log(date.token)
       this.router.navigate(['/admin/dashboard/main']);
+    })
     }
   }
 }
