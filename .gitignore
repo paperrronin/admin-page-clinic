@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/environments/environment.ts
 
 # Node
 /node_modules
@@ -40,5 +41,3 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-
-/environments/environment.ts
