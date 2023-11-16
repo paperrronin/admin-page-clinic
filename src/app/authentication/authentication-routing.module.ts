@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LockedComponent } from './locked/locked.component';
 import { Page404Component } from './page404/page404.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
     path: 'forgot-password',
     component: ForgotPasswordComponent,
   },
+  {
+    path: 'locked',
+    component: LockedComponent,
+  }
   
 ];
 @NgModule({
