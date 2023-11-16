@@ -4,6 +4,26 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/core/service/auth.service';
 
+
+export function MustMatch(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+
+      if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
+          // return if another validator has already found an error on the matchingControl
+          return;
+      }
+
+      // set error on matchingControl if validation fails
+      if (control.value !== matchingControl.value) {
+          matchingControl.setErrors({ mustMatch: true });
+      } else {
+          matchingControl.setErrors(null);
+      }
+  };
+}
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -31,6 +51,8 @@ export class SignupComponent implements OnInit {
       ],
       password: ['', Validators.required],
       cpassword: ['', Validators.required],
+    },{
+      validator: MustMatch('password', 'cpassword')
     });
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';

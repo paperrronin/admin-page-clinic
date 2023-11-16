@@ -57,6 +57,9 @@
                     <mat-error *ngIf="authForm.get('cpassword').hasError('required')">
                       Confirm Password is required
                     </mat-error>
+                    <mat-error *ngIf="authForm.get('password').dirty">
+                      Passwords must match
+                    </mat-error>
                   </mat-form-field>
                 </div>
               </div>

@@ -258,5 +258,32 @@
 }
 
 
+//locked page
+.auth-locked-title {
+  font-size: 30px;
+  font-family: Poppins, sans-serif;
+  color: #403866;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.auth-locked {
+  font-size: 60px;
+  color: #333;
+  width: 120px;
+  height: 120px;
+  background-color: transparent;
+  margin: 0 auto;
+
+  img {
+    width: 100px;
+    // border-radius: 50%;
+  }
+}
+
+
+
 
   

@@ -12,6 +12,7 @@ import { AuthenticationRoutingModule } from "./authentication-routing.module";
 import { SigninComponent } from './signin/signin.component';
 import { Page404Component } from './page404/page404.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LockedComponent } from './locked/locked.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     SignupComponent,
     SigninComponent,
     Page404Component,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    LockedComponent
   ],
   imports: [
     CommonModule,
