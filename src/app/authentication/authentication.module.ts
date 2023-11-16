@@ -11,13 +11,15 @@ import { MatButtonModule } from "@angular/material/button";
 import { AuthenticationRoutingModule } from "./authentication-routing.module";
 import { SigninComponent } from './signin/signin.component';
 import { Page404Component } from './page404/page404.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 @NgModule({
   declarations: [
     SignupComponent,
     SigninComponent,
-    Page404Component
+    Page404Component,
+    ForgotPasswordComponent
   ],
   imports: [
     CommonModule,
