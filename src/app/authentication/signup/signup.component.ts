@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/core/service/auth.service';
+import { Role } from 'src/app/core/models/role';
 
 
 export function MustMatch(controlName: string, matchingControlName: string) {
@@ -36,6 +37,7 @@ export class SignupComponent implements OnInit {
   returnUrl: string;
   hide = true;
   chide = true;
+  role:Role;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -62,14 +64,23 @@ export class SignupComponent implements OnInit {
   }
   onSubmit() {
     this.submitted = true;
+    switch(this.authForm.value.username){
+      case 'admin':
+        this.role = Role.All
+        break;
+      case 'doctor':
+        this.role = Role.Doctor
+        break;
+      case 'patient':
+        this.role = Role.Patient
+    }
     // stop here if form is invalid
     if (this.authForm.invalid) {
       return;
     } else {
-      // console.log(this.authForm.value)
-      this.auth.register(this.authForm.value.username,this.authForm.value.email,this.authForm.value.password).subscribe(
+
+      this.auth.register(this.authForm.value.username,this.authForm.value.email,this.authForm.value.password,this.role).subscribe(
         date => {
-      //  console.log(date.token)
       this.router.navigate(['/admin/dashboard/main']);
     })
     }

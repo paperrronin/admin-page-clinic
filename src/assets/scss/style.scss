@@ -26,5 +26,8 @@
 @import "./pages/auth";
 
 /*                 [5. Fonts ]                   			*/
-@import "./fonts/fontawesome/googleFonts.scss"
+@import "./fonts/fontawesome/googleFonts.scss";
+
+/*                 [6. UI ]                   			*/
+@import "ui/_card.scss";
 
