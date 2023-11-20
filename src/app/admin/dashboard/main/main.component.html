@@ -18,133 +18,38 @@
       </div>
       <!-- Widgets -->
       <div class="row">
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12" *ngFor="let chart of charts">
           <div class="card card-statistic-2">
             <div class="clearfix">
-              <div class="card-icon shadow-primary bg-purple">
-                <i class="material-icons align-middle">face</i>
+              <div class="card-icon shadow-primary" [class]="chart.cssStyle">
+                <i class="material-icons align-middle">{{chart.icon}}</i>
               </div>
               <div class="card-right">
                 <div>
-                  <h5 class="float-end">Appointments</h5>
+                  <h5 class="float-end">{{chart.title}}</h5>
                 </div>
                 <div class="m-r-10 m-l-10">
-                  <h3 class="font-weight-bold float-end mb-0"> 650</h3>
+                  <h3 class="font-weight-bold float-end mb-0"> {{chart.subtitle}}</h3>
                 </div>
               </div>
             </div>
             <div class="card-chart">
-            <apx-chart
-            [series]="chart1_Options.series"
-            [chart]="chart1_Options.chart"
-            [xaxis]="chart1_Options.xaxis"
-            [stroke]="chart1_Options.stroke"
-            [dataLabels]="chart1_Options.dataLabels"
-            [yaxis]="chart1_Options.yaxis"
-            [labels]="chart1_Options.labels"
-            [grid]="chart1_Options.grid"
-            [fill]="chart1_Options.fill"
-            [theme]="chart1_Options.theme"
-          ></apx-chart>
+              <apx-chart 
+                [series]="chart.chartOptions.series"
+                [chart]="chart.chartOptions.chart"
+                [xaxis]="chart.chartOptions.xaxis"
+                [stroke]="chart.chartOptions.stroke"
+                [dataLabels]="chart.chartOptions.dataLabels"
+                [yaxis]="chart.chartOptions.yaxis"
+                [labels]="chart.chartOptions.labels"
+                [grid]="chart.chartOptions.grid"
+                [fill]="chart.chartOptions.fill"
+                [theme]="chart.chartOptions.theme">
+              </apx-chart>
         </div>
           </div>
         </div>
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="card card-statistic-2">
-            <div class="clearfix">
-              <div class="card-icon shadow-primary bg-orange">
-                <i class="material-icons align-middle">content_cut</i>
-              </div>
-              <div class="card-right">
-                <div>
-                  <h5 class="float-end">Operations</h5>
-                </div>
-                <div class="m-r-10 m-l-10">
-                  <h3 class="font-weight-bold float-end mb-0"> 54</h3>
-                </div>
-              </div>
-            </div>
-            <div class="card-chart">
-              <apx-chart
-            [series]="chart2_Options.series"
-            [chart]="chart2_Options.chart"
-            [xaxis]="chart2_Options.xaxis"
-            [stroke]="chart2_Options.stroke"
-            [dataLabels]="chart2_Options.dataLabels"
-            [yaxis]="chart2_Options.yaxis"
-            [labels]="chart2_Options.labels"
-            [grid]="chart2_Options.grid"
-            [fill]="chart2_Options.fill"
-            [theme]="chart2_Options.theme"
-          ></apx-chart>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="card card-statistic-2">
-            <div class="clearfix">
-              <div class="card-icon shadow-primary bg-green">
-                <i class="material-icons align-middle">person_add</i>
-              </div>
-              <div class="card-right">
-                <div>
-                  <h5 class="float-end">New Patients</h5>
-                </div>
-                <div class="m-r-10 m-l-10">
-                  <h3 class="font-weight-bold float-end mb-0"> 129</h3>
-                </div>
-              </div>
-            </div>
-            <div class="card-chart">
-              <apx-chart
-              [series]="chart3_Options.series"
-              [chart]="chart3_Options.chart"
-              [xaxis]="chart3_Options.xaxis"
-              [stroke]="chart3_Options.stroke"
-              [dataLabels]="chart3_Options.dataLabels"
-              [yaxis]="chart3_Options.yaxis"
-              [labels]="chart3_Options.labels"
-              [grid]="chart3_Options.grid"
-              [fill]="chart3_Options.fill"
-              [theme]="chart3_Options.theme"
-            ></apx-chart>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-          <div class="card card-statistic-2">
-            <div class="clearfix">
-              <div class="card-icon shadow-primary bg-blue">
-                <i class="material-icons align-middle">local_activity</i>
-              </div>
-              <div class="card-right">
-                <div>
-                  <h5 class="float-end">Earning</h5>
-                </div>
-                <div class="m-r-10 m-l-10">
-                  <h3 class="font-weight-bold float-end mb-0"> $20,125</h3>
-                </div>
-              </div>
-            </div>
-            <div class="card-chart">
-              <apx-chart
-              [series]="chart4_Options.series"
-              [chart]="chart4_Options.chart"
-              [xaxis]="chart4_Options.xaxis"
-              [stroke]="chart4_Options.stroke"
-              [dataLabels]="chart4_Options.dataLabels"
-              [yaxis]="chart4_Options.yaxis"
-              [labels]="chart4_Options.labels"
-              [grid]="chart4_Options.grid"
-              [fill]="chart4_Options.fill"
-              [theme]="chart4_Options.theme"
-            ></apx-chart>
-            </div>
-          </div>
-        </div>
-  
       </div>
-     
     </div>
-  </section>
+</section>
   
