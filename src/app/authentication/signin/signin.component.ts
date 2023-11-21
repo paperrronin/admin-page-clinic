@@ -29,8 +29,8 @@ export class SigninComponent
 
   ngOnInit() {
     this.authForm = this.formBuilder.group({
-      username: ["admin@hospital.org", Validators.required],
-      password: ["admin@123", Validators.required],
+      username: ["adm@gmail.com", Validators.required],
+      password: ["qwerty", Validators.required],
     });
   }
   get f() {
@@ -62,7 +62,7 @@ export class SigninComponent
           (res) => {
             if (res) {
               setTimeout(() => {
-                const role = this.authService.currentUserValue.role;
+                const role = res.data.role;
                 if (role === Role.All || role === Role.Admin) {
                   this.router.navigate(["/admin/dashboard/main"]);
                 } else if (role === Role.Doctor) {

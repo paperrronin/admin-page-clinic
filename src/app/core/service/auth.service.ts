@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user';
 import { environment } from 'src/environments/environment';
-import { Router } from '@angular/router';
+import { Role } from '../models/role';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +13,7 @@ export class AuthService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
-  constructor(private http: HttpClient,private router: Router,) {
+  constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(
       JSON.parse(localStorage.getItem('currentUser'))
     );
@@ -48,12 +48,13 @@ export class AuthService {
     return of({ success: false });
   }
 
-  register(username: string, email:string, password: string){
+  register(username: string, email:string, password: string,role:Role){
     return this.http
       .post<any>(`${environment.apiUrl}/register`, {
         email,
         password,
-        username
+        username,
+        role
       })
   }
 }
