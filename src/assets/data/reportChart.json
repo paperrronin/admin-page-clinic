@@ -1,22 +1,50 @@
-[
-    {
-    "id":5,
+{
+  "id": 5,
+  "chartOptions": {
     "series": [
       {
         "name": "Colds and Flu",
-        "data": [44, 55, 41, 67, 22, 43]
+        "data": [
+          44,
+          55,
+          41,
+          67,
+          22,
+          43
+        ]
       },
       {
         "name": "Headaches",
-        "data": [13, 23, 20, 8, 13, 27]
+        "data": [
+          13,
+          23,
+          20,
+          8,
+          13,
+          27
+        ]
       },
       {
         "name": "Malaria",
-        "data": [11, 17, 15, 15, 21, 14]
+        "data": [
+          11,
+          17,
+          15,
+          15,
+          21,
+          14
+        ]
       },
       {
         "name": "Typhoid",
-        "data": [21, 7, 25, 13, 22, 8]
+        "data": [
+          21,
+          7,
+          25,
+          13,
+          22,
+          8
+        ]
       }
     ],
     "chart": {
@@ -51,14 +79,26 @@
     },
     "xaxis": {
       "type": "category",
-      "categories": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      "categories": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+      ]
     },
     "legend": {
       "show": false
     },
     "fill": {
       "opacity": 0.8,
-      "colors": ["#01B8AA", "#374649", "#FD625E", "#F2C80F"]
+      "colors": [
+        "#01B8AA",
+        "#374649",
+        "#FD625E",
+        "#F2C80F"
+      ]
     },
     "tooltip": {
       "theme": "dark",
@@ -69,5 +109,5 @@
         "show": true
       }
     }
+  }
 }
-]

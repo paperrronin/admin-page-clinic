@@ -12,7 +12,10 @@ export class ChartService {
 
   constructor(public http: HttpClient) { }
 
-  public getSmallCharts():Observable<Chart[]>{
+  private patientData = '../../../assets/data/patientListChart.json';
+  private reportData = '../../../assets/data/reportChart.json';
+
+  public getSmallCharts(): Observable<Chart[]> {
     return this.http
       .get<Chart[]>(`${environment.apiUrl}/charts`)
       .pipe(map(charts => {
@@ -21,9 +24,16 @@ export class ChartService {
         }
         return charts
       }))
-    }
-  
   }
-   
+
+  public getPatientChart(): Observable<Chart> {
+    return this.http.get<Chart>(this.patientData)
+  }
+
+  public getReportChart(): Observable<Chart> {
+    return this.http.get<Chart>(this.reportData);
+  }
+}
+
 
 
