@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
@@ -8,12 +9,10 @@ import { Chart } from '../models/chart';
   providedIn: 'root'
 })
 export class ChartService {
-  public chartList: Observable<Chart[]>;
-  // public chartList:Chart[]
 
   constructor(public http: HttpClient) { }
 
-  getCharts():any{
+  public getSmallCharts():Observable<Chart[]>{
     return this.http
       .get<Chart[]>(`${environment.apiUrl}/charts`)
       .pipe(map(charts => {
@@ -23,6 +22,7 @@ export class ChartService {
         return charts
       }))
     }
+  
   }
    
 

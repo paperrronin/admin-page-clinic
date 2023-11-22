@@ -30,4 +30,7 @@ export type ChartOptions = {
     plotOptions:ApexPlotOptions;
     fill:ApexFill;
     theme:ApexTheme;
+    colors: string[];
+    tooltip: ApexTooltip;
+    responsive: ApexResponsive[];
   };
