@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ChartjsModule } from '@coreui/angular-chartjs';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -24,7 +25,8 @@ import { ChartjsModule } from '@coreui/angular-chartjs';
     MatButtonModule,
     MatMenuModule,
     MatTooltipModule,
-    ChartjsModule
+    ChartjsModule,
+    SharedModule
   ]
 })
 export class DashboardModule { }

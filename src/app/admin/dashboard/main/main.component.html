@@ -1,26 +1,9 @@
 <section class="content">
     <div class="container-fluid">
-      <div class="block-header">
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <ul class="breadcrumb breadcrumb-style ">
-              <li class="breadcrumb-item">
-                <h4 class="page-title">Dashboard</h4>
-                <i class="bi bi-caret-right-fill"></i>
-              </li>
-              <li class="breadcrumb-item">
-                <a routerLink="/admin/dashboard/main">
-                  <i class="bi bi-house-fill"></i> 
-                  </a>
-                  <i class="bi bi-caret-right-fill bi-caret-right-fill-small"></i>
-              </li>
-              <li class="breadcrumb-item active">
-                Dashboard
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+
+        <app-breadcrumb></app-breadcrumb>
+      
+      
 
       <div class="row">
         <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12" *ngFor="let chart of charts">
