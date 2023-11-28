@@ -16,8 +16,30 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    // canActivate: [AuthGuard],
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
+      data: {
+        role: Role.Admin,
+      }
+  },
+  {
+    path: 'doctor',
+    // canActivate: [AuthGuard],
+    data: {
+      role: Role.Doctor,
+    },
+    loadChildren: () =>
+      import('./doctor/doctor.module').then((m) => m.DoctorModule),
+  },
+  {
+    path: 'patient',
+    // canActivate: [AuthGuard],
+    data: {
+      role: Role.Patient,
+    },
+    loadChildren: () =>
+      import('./patient/patient.module').then((m) => m.PatientModule),
   },
   { path: '**', component: SigninComponent },
 ];

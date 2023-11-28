@@ -29,7 +29,7 @@ export class SigninComponent
 
   ngOnInit() {
     this.authForm = this.formBuilder.group({
-      username: ["adm@gmail.com", Validators.required],
+      email: ["adm@gmail.com", Validators.required],
       password: ["qwerty", Validators.required],
     });
   }
@@ -37,15 +37,15 @@ export class SigninComponent
     return this.authForm.controls;
   }
   adminSet() {
-    this.authForm.get("username").setValue("adm@gmail.com");
+    this.authForm.get("email").setValue("adm@gmail.com");
     this.authForm.get("password").setValue("qwerty");
   }
   doctorSet() {
-    this.authForm.get("username").setValue("doc@gmail.com");
+    this.authForm.get("email").setValue("doc@gmail.com");
     this.authForm.get("password").setValue("doctor@123");
   }
   patientSet() {
-    this.authForm.get("username").setValue("patient@gmail.com");
+    this.authForm.get("email").setValue("patient@gmail.com");
     this.authForm.get("password").setValue("patient@123");
   }
   onSubmit() {
@@ -53,16 +53,17 @@ export class SigninComponent
     this.loading = true;
     this.error = "";
     if (this.authForm.invalid) {
-      this.error = "Username and Password not valid !";
+      this.error = "E-mail and Password not valid !";
       return;
     } else {
       this.subs.sink = this.authService
-        .login(this.f['username'].value, this.f['password'].value)
+        .login(this.f['email'].value, this.f['password'].value)
         .subscribe(
           (res) => {
             if (res) {
               setTimeout(() => {
-                const role = res.data.role;
+                const role = this.authService.currentUserValue.data.role;
+                console.log(role)
                 if (role === Role.All || role === Role.Admin) {
                   this.router.navigate(["/admin/dashboard/main"]);
                 } else if (role === Role.Doctor) {
