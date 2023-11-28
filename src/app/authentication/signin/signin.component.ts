@@ -37,15 +37,15 @@ export class SigninComponent
     return this.authForm.controls;
   }
   adminSet() {
-    this.authForm.get("username").setValue("admin@hospital.org");
-    this.authForm.get("password").setValue("admin@123");
+    this.authForm.get("username").setValue("adm@gmail.com");
+    this.authForm.get("password").setValue("qwerty");
   }
   doctorSet() {
-    this.authForm.get("username").setValue("doctor@hospital.org");
+    this.authForm.get("username").setValue("doc@gmail.com");
     this.authForm.get("password").setValue("doctor@123");
   }
   patientSet() {
-    this.authForm.get("username").setValue("patient@hospital.org");
+    this.authForm.get("username").setValue("patient@gmail.com");
     this.authForm.get("password").setValue("patient@123");
   }
   onSubmit() {
