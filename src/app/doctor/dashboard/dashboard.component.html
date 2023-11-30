@@ -1,1 +1,20 @@
-<p>dashboard works!</p>
+<section class="content">
+    <div class="container-fluid">
+
+        <app-breadcrumb></app-breadcrumb>
+
+        <div class="row">
+            <div class="col-lg-3 col-sm-6" *ngFor="let card of doctorCards">
+                <div class="info-box7 order-info-box7" [class]="card.cardBcgColor">
+                    <div class="info-box7-block">
+                        <h5 class="m-b-15">{{card.cardTitle}}</h5>
+                        <h2 class="text-end"><i class="bi float-start" [class]="card.cardIcon"></i><span
+                                class="card-quant">{{card.cardQuant}}</span></h2>
+                        <p class="m-b-0">{{card.cardPercent}} Higher Then Last Month</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

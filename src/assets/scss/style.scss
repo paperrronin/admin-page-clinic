@@ -23,6 +23,7 @@
 @import "components/feed";
 @import "components/_formcomponents.scss";
 @import "components/breadcrumbs";
+@import "components/infobox";
 
 
 /*                 [4. Pages ]                   			*/
@@ -33,4 +34,7 @@
 
 /*                 [6. UI ]                   			*/
 @import "ui/_card.scss";
+
+/*                 [7. Common ]                   			*/
+@import "common/mixins";
 
