@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Page404Component } from './authentication/page404/page404.component';
 import { SigninComponent } from './authentication/signin/signin.component';
+import { AuthGuard } from './core/guards/auth.guard';
 import { Role } from './core/models/role';
 import { AuthLayoutComponent } from './layout/app-layout/auth-layout/auth-layout.component';
 
@@ -16,16 +17,17 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
       data: {
-        role: Role.Admin,
+        role: Role.All || Role.Admin
       }
+
   },
   {
     path: 'doctor',
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     data: {
       role: Role.Doctor,
     },
@@ -34,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'patient',
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     data: {
       role: Role.Patient,
     },

@@ -63,7 +63,6 @@ export class SigninComponent
             if (res) {
               setTimeout(() => {
                 const role = this.authService.currentUserValue.data.role;
-                console.log(role)
                 if (role === Role.All || role === Role.Admin) {
                   this.router.navigate(["/admin/dashboard/main"]);
                 } else if (role === Role.Doctor) {
@@ -77,7 +76,6 @@ export class SigninComponent
               }, 1000);
             } else {
               this.error = "Login or password is incorrect!";
-              console.log(this.error)
             }
           },
           (error) => {
