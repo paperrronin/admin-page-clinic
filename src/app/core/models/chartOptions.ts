@@ -14,9 +14,10 @@ import {
     ApexTitleSubtitle,
     ApexGrid,
     ApexTheme,
+    ApexNonAxisChartSeries,
   } from 'ng-apexcharts';
 export type ChartOptions = {
-    series: ApexAxisChartSeries;
+    series: ApexAxisChartSeries | ApexNonAxisChartSeries;
     chart: ApexChart;
     xaxis: ApexXAxis;
     stroke: ApexStroke;

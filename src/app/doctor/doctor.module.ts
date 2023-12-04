@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DoctorRoutingModule } from './doctor-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -13,7 +15,9 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     DoctorRoutingModule,
-    SharedModule
+    SharedModule,
+    NgApexchartsModule,
+    MatButtonModule
   ]
 })
 export class DoctorModule { }

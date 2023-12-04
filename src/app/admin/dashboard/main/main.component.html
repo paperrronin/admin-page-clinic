@@ -6,7 +6,7 @@
       
 
       <div class="row">
-        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12" *ngFor="let chart of charts">
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12" *ngFor="let chart of basicAreaCharts">
           <div class="card card-statistic-2">
             <div class="clearfix">
               <div class="card-icon shadow-primary" [class]="chart.cssStyle">
@@ -40,7 +40,7 @@
       </div>
 
       <div class="row">
-        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" *ngFor="let chart of patientCharts">
           <div class="card">
             <div class="header">
               <h2>
@@ -56,19 +56,19 @@
             </div>
             <div class="body">
               <apx-chart 
-                [series]="patientChart.chartOptions.series" 
-                [chart]="patientChart.chartOptions.chart"
-                [xaxis]="patientChart.chartOptions.xaxis" 
-                [colors]="patientChart.chartOptions.colors"
-                [stroke]="patientChart.chartOptions.stroke" 
-                [legend]="patientChart.chartOptions.legend" 
-                [tooltip]="patientChart.chartOptions.tooltip"
-                [dataLabels]="patientChart.chartOptions.dataLabels">
+                [series]="chart.chartOptions.series" 
+                [chart]="chart.chartOptions.chart"
+                [xaxis]="chart.chartOptions.xaxis" 
+                [colors]="chart.chartOptions.colors"
+                [stroke]="chart.chartOptions.stroke" 
+                [legend]="chart.chartOptions.legend" 
+                [tooltip]="chart.chartOptions.tooltip"
+                [dataLabels]="chart.chartOptions.dataLabels">
               </apx-chart>
             </div>
           </div>
         </div>
-        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" *ngFor="let chart of reportCharts">
           <div class="card">
             <div class="header">
               <h2>Common Diseases Report</h2>
@@ -83,15 +83,15 @@
             </div>
             <div class="body">
               <apx-chart 
-                [series]="reportChart.chartOptions.series" 
-                [chart]="reportChart.chartOptions.chart"
-                [dataLabels]="reportChart.chartOptions.dataLabels" 
-                [plotOptions]="reportChart.chartOptions.plotOptions"
-                [responsive]="reportChart.chartOptions.responsive" 
-                [xaxis]="reportChart.chartOptions.xaxis"
-                [tooltip]="reportChart.chartOptions.tooltip" 
-                [legend]="reportChart.chartOptions.legend" 
-                [fill]="reportChart.chartOptions.fill">
+                [series]="chart.chartOptions.series" 
+                [chart]="chart.chartOptions.chart"
+                [dataLabels]="chart.chartOptions.dataLabels" 
+                [plotOptions]="chart.chartOptions.plotOptions"
+                [responsive]="chart.chartOptions.responsive" 
+                [xaxis]="chart.chartOptions.xaxis"
+                [tooltip]="chart.chartOptions.tooltip" 
+                [legend]="chart.chartOptions.legend" 
+                [fill]="chart.chartOptions.fill">
               </apx-chart>
             </div>
           </div>

@@ -1,20 +1,77 @@
 <section class="content">
-    <div class="container-fluid">
+  <div class="container-fluid">
 
-        <app-breadcrumb></app-breadcrumb>
+    <app-breadcrumb></app-breadcrumb>
 
-        <div class="row">
-            <div class="col-lg-3 col-sm-6" *ngFor="let card of doctorCards">
-                <div class="info-box7 order-info-box7" [class]="card.cardBcgColor">
-                    <div class="info-box7-block">
-                        <h5 class="m-b-15">{{card.cardTitle}}</h5>
-                        <h2 class="text-end"><i class="bi float-start" [class]="card.cardIcon"></i><span
-                                class="card-quant">{{card.cardQuant}}</span></h2>
-                        <p class="m-b-0">{{card.cardPercent}} Higher Then Last Month</p>
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6" *ngFor="let card of doctorCards">
+        <div class="info-box7 order-info-box7" [class]="card.cardBcgColor">
+          <div class="info-box7-block">
+            <h5 class="m-b-15">{{card.cardTitle}}</h5>
+            <h2 class="text-end"><i class="bi float-start" [class]="card.cardIcon"></i><span
+                class="card-quant">{{card.cardQuant}}</span></h2>
+            <p class="m-b-0">{{card.cardPercent}} Higher Then Last Month</p>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12" *ngFor="let chart of patientCharts">
+        <div class="card">
+          <div class="header">
+            <h2>
+              Patients Survay</h2>
+
+          </div>
+          <div class="body">
+            <apx-chart 
+            [series]="chart.chartOptions.series" 
+            [chart]="chart.chartOptions.chart"
+            [xaxis]="chart.chartOptions.xaxis" 
+            [colors]="chart.chartOptions.colors"
+            [stroke]="chart.chartOptions.stroke" 
+            [legend]="chart.chartOptions.legend" 
+            [tooltip]="chart.chartOptions.tooltip"
+            [dataLabels]="chart.chartOptions.dataLabels">
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12" *ngFor="let chart of appointmentCharts">
+        <div class="card">
+          <div class="header">
+            <h2>Appointment Review</h2>
+
+          </div>
+          <div class="body">
+            <apx-chart 
+              [series]="chart.chartOptions.series"
+              [chart]="chart.chartOptions.chart"
+              [plotOptions]="chart.chartOptions.plotOptions" 
+              [labels]="chart.chartOptions.labels"
+              [colors]="chart.chartOptions.colors">
+            </apx-chart>
+            <div class="text-center pt-3">
+              <div class="chart-note">
+                <span class="dot bg-orange"></span>
+                <span>Face To Face</span>
+              </div>
+              <div class="chart-note">
+                <span class="dot bg-blue"></span>
+                <span>E-Consult</span>
+              </div>
+              <div class="chart-note msr-0">
+                <span class="dot bg-green"></span>
+                <span>Available</span>
+              </div>
+            </div>
+            <div class="text-center pt-3">
+              <button mat-button color="primary">Modify Availability</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </section>
