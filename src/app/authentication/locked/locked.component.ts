@@ -24,17 +24,17 @@ export class LockedComponent implements OnInit {
       password: ['', Validators.required],
     });
     
-    if(this.authService.currentUserValue.img != undefined){
-      this.userImg = this.authService.currentUserValue.img;
+    if(this.authService.currentUserValue.data.img != undefined){
+      this.userImg = this.authService.currentUserValue.data.img;
     } else {
       this.userImg = "assets/images/pages/non-user.svg"
     }
 
     if(this.userFullName != undefined){
       this.userFullName =
-      this.authService.currentUserValue.firstName +
+      this.authService.currentUserValue.data.firstName +
       ' ' +
-      this.authService.currentUserValue.lastName;
+      this.authService.currentUserValue.data.lastName;
     } else {
       this.userFullName = 'Sign in, plese'
     }
@@ -49,7 +49,7 @@ export class LockedComponent implements OnInit {
     if (this.authForm.invalid) {
       return;
     } else {
-      const role = this.authService.currentUserValue.role;
+      const role = this.authService.currentUserValue.data.role;
       if (role === Role.All || role === Role.Admin) {
         this.router.navigate(['/admin/dashboard/main']);
       } else if (role === Role.Doctor) {

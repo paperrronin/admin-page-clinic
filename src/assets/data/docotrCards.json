@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "cardTitle": "Todays Patients",
+        "cardIcon": "bi-person-rolodex",
+        "cardQuant": 231,
+        "cardPercent": "18%",
+        "cardBcgColor": "l-bg-card1"
+    },
+    {
+        "id": 2,
+        "cardTitle": "Appointments",
+        "cardIcon": "bi-calendar-check-fill",
+        "cardQuant": 122,
+        "cardPercent": "21%",
+        "cardBcgColor": "l-bg-card2"
+    },
+    {
+        "id": 3,
+        "cardTitle": "Todays Operations",
+        "cardIcon": "bi-scissors",
+        "cardQuant": 28,
+        "cardPercent": "37%",
+        "cardBcgColor": "l-bg-card3"
+    },
+    {
+        "id": 4,
+        "cardTitle": "Online Appointment",
+        "cardIcon": "bi-browser-chrome",
+        "cardQuant": 42,
+        "cardPercent": "10%",
+        "cardBcgColor": "l-bg-card4"
+    }
+]

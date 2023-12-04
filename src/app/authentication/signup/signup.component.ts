@@ -81,7 +81,7 @@ export class SignupComponent implements OnInit {
 
       this.auth.register(this.authForm.value.username,this.authForm.value.email,this.authForm.value.password,this.role).subscribe(
         date => {
-      this.router.navigate(['/admin/dashboard/main']);
+      this.router.navigate(['/authentication/signin']);
     })
     }
   }
