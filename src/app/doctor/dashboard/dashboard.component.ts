@@ -90,10 +90,4 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  // private getRadialBarCharts() {
-  //   this.chartService.getRadialBarCharts(this.authService.currentUserValue.data.role).subscribe(res => {
-  //     this.charts = res
-  //   })
-  // }
-
 }
