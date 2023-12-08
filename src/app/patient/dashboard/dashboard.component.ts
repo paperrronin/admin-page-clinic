@@ -17,7 +17,6 @@ export class DashboardComponent {
     }
 
     private getPatientName():string{
-      console.log(this.authService.currentUserValue.data)
       this.name = this.authService.currentUserValue.data.username
       return this.name
     }

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Chart } from 'src/app/core/models/chart';
 
 import { ChartType } from 'src/app/core/models/chartEnum';
-import { DocCard } from 'src/app/core/models/docCard';
+import { Card } from 'src/app/core/models/card';
 import { Role } from 'src/app/core/models/role';
 import { AuthService } from 'src/app/core/service/auth.service';
 import { ChartService } from 'src/app/core/service/chart.service';
-import { DoctorCardService } from 'src/app/core/service/doctor-card.service';
+import { CardService } from 'src/app/core/service/card.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,13 +15,13 @@ import { DoctorCardService } from 'src/app/core/service/doctor-card.service';
 })
 export class DashboardComponent implements OnInit {
 
-  public doctorCards: DocCard[];
+  public doctorCards: Card[];
   public patientCharts:Chart[];
   public appointmentCharts:Chart[];
 
 
   constructor (
-    public docCardService: DoctorCardService,
+    public docCardService: CardService,
     public chartService: ChartService,
     public authService:AuthService ) {
   }
@@ -86,7 +86,6 @@ export class DashboardComponent implements OnInit {
         default:
           throw Error('Invalid chart type')
       }
-
     })
   }
 
