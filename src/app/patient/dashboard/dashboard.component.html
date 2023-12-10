@@ -24,7 +24,30 @@
             </div>
           </div>
         </div>
-      </div>     
+      </div>    
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-12" *ngFor="let card of cards">
+          <div class="card card-statistic-2 patient-card">
+            <div class="clearfix">
+              <div class="patient-card-icon card-icon-only shadow-primary float-start">
+                <img src={{card.cardIcon}} alt="">
+              </div>
+              <div class="card-right">
+                <div>
+                  <h5 class="float-end patient-title">{{card.cardTitle}}</h5>
+                </div>
+                <div class="text-success">
+                  <h2 class="font-weight-bold float-end mb-0 " [class]="card.cardFontColor"> {{card.cardQuant}} </h2>
+                </div>
+              </div>
+            </div>
+            <div class="card-content msl-1 mb-3">
+              <p class="mb-0 d-flex"><i class="material-icons pr-2" [class]="card.cardFontColor">{{card.trending_icon}}</i> {{card.cardPercent}} {{card.rise_fall}} the last month
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> 
     </div>
   </section>
   

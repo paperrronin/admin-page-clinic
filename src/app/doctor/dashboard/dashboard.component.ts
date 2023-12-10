@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
 
   constructor (
-    public docCardService: CardService,
+    public cardService: CardService,
     public chartService: ChartService,
     public authService:AuthService ) {
   }
@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
 
 
   private getCards(){
-    this.docCardService.getDocCards().subscribe(res => {
+    return this.cardService.getCards(this.authService.currentUserValue.data.role).subscribe(res => {
       this.doctorCards = res
     })
   }
