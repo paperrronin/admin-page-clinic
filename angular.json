@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies":[
+              "apexcharts"
+            ],
             "outputPath": "dist/page-admin-clinic",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -72,7 +75,6 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-
           "configurations": {
             "production": {
               "browserTarget": "page-admin-clinic:build:production"
