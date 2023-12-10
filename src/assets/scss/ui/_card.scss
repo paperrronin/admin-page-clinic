@@ -314,7 +314,7 @@
 }
 
 h5, h5 {
-  font-size: 1.25rem!important;
+  font-size: 1.2rem!important;
   font-weight: 500!important;
 }
 
@@ -338,6 +338,14 @@ h5, h5 {
   color: #fff;
 }
 
+.col-green{
+  color: #2B908F!important;
+}
+
+.col-red{
+  color: #BF3030!important;
+}
+
 .bg-blue {
   background-color: #03A9F4!important;
   color: #fff;
@@ -351,3 +359,48 @@ h5, h5 {
 .mat-mdc-button .mat-icon {
   margin-right: 0px!important;
 }
+
+.col-blue {
+  color: #2196f3!important;
+}
+
+.font-16{
+  font-size: 16px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-25 {
+  font-size: 25px;
+}
+
+.font-30{
+  font-size: 30px;
+}
+
+.weight-500 {
+  font-weight: 500 !important;
+}
+
+.weight-600{
+  font-weight: 600;
+}
+
+.patient-card-icon img{
+  display: flex;
+  width: 50px;
+  height: 50px;
+}
+
+.patient-card .d-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.patient-card .material-icons{
+  margin-right: 6px;
+}
+
