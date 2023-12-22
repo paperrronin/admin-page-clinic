@@ -14,12 +14,14 @@ import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';import {
   HttpClient,
 } from '@angular/common/http';
 import { AuthLayoutComponent } from './layout/app-layout/auth-layout/auth-layout.component';
+import { MainLayoutComponent } from './layout/app-layout/main-layout/main-layout.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    MainLayoutComponent
   ],
   imports: [
     BrowserModule,
