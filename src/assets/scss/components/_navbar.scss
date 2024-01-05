@@ -44,7 +44,9 @@
       }
     }
     .nav.navbar-nav {
-      display: block;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
     .container-fluid,
     .container {
@@ -59,7 +61,7 @@
     .collapse-menu-icon {
       margin-bottom: 0px;
       // line-height: 60px;
-      padding-left: 35px;
+      // padding-left: 35px;
     }
   }
   .ls-closed {
@@ -119,8 +121,6 @@
   }
   
   .navbar-header {
-    padding: 8px;
-    // background-color: #000;
     width: 265px;
     @include transition(all 0.5s);
   
@@ -142,7 +142,7 @@
     > li {
       > a {
         padding: 7px 7px 2px 7px;
-        margin-top: 14px;
+        // margin-top: 14px;
       }
       .js-right-sidebar {
         margin-right: 15px;
@@ -495,4 +495,77 @@
       margin-left: 0;
     }
   }
+
+
+  .mat-menu-lang-btn{
+    span{
+      display: flex;
+      align-items: center;
+      .lang-span{
+        margin-left: 6px;
+      }
+    }
+  }
+
+  .mat-mdc-menu-content{
+    padding: 0px !important;
+  }
+
+  .note-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #7366ff;
+    font-size: 12px;
+    span{
+      color: #eee;
+    }
+    button{
+      width: 60%;
+      color: #eee;
+      font-size: 12px !important;
+    }
+  }
+
+  .mat-menu-note{
+    .mat-mdc-menu-item-text{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      .table-img{
+        img{
+          border-radius: 50%;
+        }
+      }
+      .menu-info{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .menu-desc{
+          display: flex;
+          align-items: center;
+          color: #0000008a;
+          font-size: 14px;
+          .material-icons{
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            margin-right: 4px;
+          }
+        }
+        .menu-desc-data{
+          font-size: 16px;
+          color: #FFB300;
+        }
+      }
+    }
+  }
+
+  .all-note-read-btn{
+    width: 100%;
+  }
+
   

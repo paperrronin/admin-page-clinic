@@ -49,7 +49,9 @@
       border-top: 0;
       box-shadow: none;
       &.collapse {
-        display: block !important;
+        display: flex !important;
+        justify-content: space-between;
+        align-items: center;
         height: auto !important;
         padding-bottom: 0;
         overflow: visible !important;
@@ -113,7 +115,7 @@
     .navbar-header {
       margin-right: -15px;
       margin-left: -15px;
-      border-right: 1px solid #f2f4f9;
+    //   border-right: 1px solid #f2f4f9;
     }
     .navbar-collapse {
       margin-right: -15px;
