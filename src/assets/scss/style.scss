@@ -7,6 +7,10 @@
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 @import '../../../node_modules/bootstrap-icons/font/bootstrap-icons';
+@import "common/mixins";
+@import "common/general";
+@import "common/variables";
+@import "common/media";
 
 
 
@@ -24,6 +28,7 @@
 @import "components/_formcomponents.scss";
 @import "components/breadcrumbs";
 @import "components/infobox";
+@import "components/navbar";
 
 
 /*                 [4. Pages ]                   			*/
@@ -34,10 +39,6 @@
 
 /*                 [6. UI ]                   			*/
 @import "ui/_card.scss";
-
-/*                 [7. Common ]                   			*/
-@import "common/mixins";
-@import "common/general";
 
 /*                 [8. Plugins ]                   			*/
 @import "plugins/charts";

@@ -51,9 +51,9 @@ export class AuthService {
   register(username: string, email:string, password: string,role:Role){
     return this.http
       .post<any>(`${environment.apiUrl}/register`, {
+        username,
         email,
         password,
-        username,
         role
       })
   }

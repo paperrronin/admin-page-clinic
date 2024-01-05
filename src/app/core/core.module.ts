@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './service/auth.service';
+import { RightSidebarService } from './service/rightsidebar.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -13,7 +15,9 @@ import { AuthService } from './service/auth.service';
     CommonModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuard,
+    RightSidebarService
   ],
 })
 export class CoreModule { }

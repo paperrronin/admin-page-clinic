@@ -5,6 +5,7 @@ import { DoctorRoutingModule } from './doctor-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -17,7 +18,8 @@ import { MatButtonModule } from '@angular/material/button';
     DoctorRoutingModule,
     SharedModule,
     NgApexchartsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class DoctorModule { }

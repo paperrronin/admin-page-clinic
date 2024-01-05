@@ -57,7 +57,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
       data: {
-        role: Role.All || Role.Admin
+        role: Role.All
       }
 
   },
