@@ -11,13 +11,26 @@
             <p class="auth-signup-text text-muted">Enter details to create your account</p>
             <form class="validate-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
               <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 mb-2">
                   <mat-form-field class="example-full-width" appearance="outline">
                     <mat-label>Username</mat-label>
                     <input matInput formControlName="username" required>
                     <mat-icon matSuffix>face</mat-icon>
                     <mat-error *ngIf="authForm.get('username').hasError('required')">
                       Username is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 mb-2">
+                  <mat-form-field class="role_select_form">
+                    <mat-label>Select an role</mat-label>
+                    <mat-select formControlName="role">
+                      <mat-option value="Admin">Admin</mat-option>
+                      <mat-option value="Doctor">Doctor</mat-option>
+                      <mat-option value="Patient">Patient</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="authForm.get('role').hasError('required') || authForm.get('role').touched">
+                      Please choose a role
                     </mat-error>
                   </mat-form-field>
                 </div>

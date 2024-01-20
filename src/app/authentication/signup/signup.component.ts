@@ -47,6 +47,7 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.authForm = this.formBuilder.group({
       username: ['', Validators.required],
+      role:['', Validators.required],
       email: [
         '',
         [Validators.required, Validators.email, Validators.minLength(5)],
@@ -64,22 +65,12 @@ export class SignupComponent implements OnInit {
   }
   onSubmit() {
     this.submitted = true;
-    switch(this.authForm.value.username){
-      case 'admin':
-        this.role = Role.All
-        break;
-      case 'doctor':
-        this.role = Role.Doctor
-        break;
-      case 'patient':
-        this.role = Role.Patient
-    }
-    // stop here if form is invalid
+
     if (this.authForm.invalid) {
       return;
     } else {
 
-      this.auth.register(this.authForm.value.username,this.authForm.value.email,this.authForm.value.password,this.role).subscribe(
+      this.auth.register(this.authForm.value.username,this.authForm.value.email,this.authForm.value.password,this.authForm.value.role).subscribe(
         date => {
       this.router.navigate(['/authentication/signin']);
     })

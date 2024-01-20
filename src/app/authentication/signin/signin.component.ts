@@ -29,19 +29,19 @@ export class SigninComponent
 
   ngOnInit() {
     this.authForm = this.formBuilder.group({
-      email: ["adm@gmail.com", Validators.required],
-      password: ["qwerty", Validators.required],
+      email: ["admin@gmail.com", Validators.required],
+      password: ["admin@123", Validators.required],
     });
   }
   get f() {
     return this.authForm.controls;
   }
   adminSet() {
-    this.authForm.get("email").setValue("adm@gmail.com");
-    this.authForm.get("password").setValue("qwerty");
+    this.authForm.get("email").setValue("admin@gmail.com");
+    this.authForm.get("password").setValue("admin@123");
   }
   doctorSet() {
-    this.authForm.get("email").setValue("doc@gmail.com");
+    this.authForm.get("email").setValue("doctor@gmail.com");
     this.authForm.get("password").setValue("doctor@123");
   }
   patientSet() {
@@ -63,7 +63,7 @@ export class SigninComponent
             if (res) {
               setTimeout(() => {
                 const role = this.authService.currentUserValue.data.role;
-                if (role === Role.All || role === Role.Admin) {
+                if (role === Role.Admin) {
                   this.router.navigate(["/admin/dashboard/main"]);
                 } else if (role === Role.Doctor) {
                   this.router.navigate(["/doctor/dashboard"]);
