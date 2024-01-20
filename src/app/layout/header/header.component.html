@@ -1,0 +1,108 @@
+<nav #navbar class="navbar active">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" onClick="return false;" class="navbar-toggle collapsed"
+        (click)="isNavbarCollapsed = !isNavbarCollapsed" aria-expanded="false"></a>
+      <a href="#" onClick="return false;" class="bars" (click)="mobileMenuSidebarOpen($event,'overlay-open')"></a>
+      <a class="navbar-brand" routerLink={{homePage}}>
+        <img src="assets/images/logo.svg" class="logo-img" alt="" />
+        <span class="logo-name">Clinica</span>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed">
+      <ul class="float-start collapse-menu-icon">
+        <li>
+          <button mat-icon-button (click)="callSidemenuCollapse()" class="sidemenu-collapse">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- Full Screen Button -->
+        <li class="fullscreen">
+          <button mat-icon-button (click)="callFullscreen()" class=" nav-notification-icons">
+            <mat-icon>fullscreen</mat-icon>
+          </button>
+        </li>
+        <!-- #END# Full Screen Button -->
+        <li class="nav-item">
+          <button mat-button [matMenuTriggerFor]="menuLang" class="lang-dropdown">
+            <img *ngIf="flagvalue !== undefined" src="{{flagvalue}}" height="16">
+            <img *ngIf="flagvalue === undefined" src="{{defaultFlag}}" height="16">
+          </button>
+          <mat-menu #menuLang="matMenu" class="mat-menu-lang">
+            <button mat-menu-item class="mat-menu-lang-btn" *ngFor="let item of listLang"
+              (click)="setLanguage(item.text, item.lang, item.flag)"
+              [ngClass]="{'active': langStoreValue === item.lang}">
+              <img src="{{item.flag}}" height="14">
+              <span class="lang-span">{{item.text}}</span>
+            </button>
+          </mat-menu>
+        </li>
+        <!-- #START# Notifications-->
+        <li class="nav-item" >
+          <button mat-icon-button [matMenuTriggerFor]="menuNote">
+            <mat-icon>notifications_none</mat-icon>
+            <span class="label-count bg-orange"></span>
+          </button>
+          <div >
+            <mat-menu #menuNote="matMenu" class="mat-menu-note">
+                  <div class="note-header">
+                    <span>Notification</span>
+                    <button mat-button class="all-note-read-btn">Mark all as read</button>
+                  </div>
+                  <div class="note-data">
+                    <button mat-menu-item *ngFor="let notification of notifications" onClick="return false;">
+                      <span class="table-img msg-user">
+                        <img src="{{notification.userImg}}" alt="" height="26">
+                      </span>
+                      <span class="menu-info">
+                        <span class="menu-title">{{notification.userName}}</span>
+                        <span class="menu-desc">
+                          <i class="material-icons">access_time</i> {{notification.time}}
+                        </span>
+                        <span class="menu-desc menu-desc-data">{{notification.message}}</span>
+                      </span>
+                    </button>
+                  </div>    
+            </mat-menu>
+
+          </div>
+        </li>
+        <!-- #END# Notifications-->
+        <li mat-button [matMenuTriggerFor]="menuUser" class="nav-item user_profile">
+          <a href="#" onClick="return false;" >
+            <img src={{userImg}} class="rounded-circle" width="32" height="32" alt="User">
+          </a>
+          <div>
+            <mat-menu #menuUser="matMenu" class="noti-list" style="position: relative; max-width: 600px; max-height: 300px;">
+                    
+                      <button mat-menu-item href="#" onClick="return false;">
+                        <mat-icon aria-hidden="false" class="msr-2">person</mat-icon>Profile
+                      </button>
+
+                      <button mat-menu-item href="#" onClick="return false;">
+                        <mat-icon aria-hidden="false" class="msr-2">feedback</mat-icon>Feedback
+                      </button>
+                   
+                      <button mat-menu-item href="#" onClick="return false;">
+                        <mat-icon aria-hidden="false" class="msr-2">help</mat-icon>Help
+                      </button>
+                 
+                      <button mat-menu-item href="javascript:void(0);" (click)="logout()">
+                        <mat-icon aria-hidden="false" class="msr-2">power_settings_new</mat-icon>Logout
+                      </button>
+                    
+            </mat-menu>
+          </div>
+        </li>
+        <!-- #END# Tasks -->
+        <!-- <li class="float-end">
+          <button mat-icon-button (click)="toggleRightSidebar()" class="nav-notification-icons js-right-sidebar">
+            <mat-icon id="settingBtn">settings</mat-icon>
+          </button>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>

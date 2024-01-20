@@ -15,24 +15,44 @@ import {CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';import {
 } from '@angular/common/http';
 import { AuthLayoutComponent } from './layout/app-layout/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './layout/app-layout/main-layout/main-layout.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { CoreModule } from './core/core.module';
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { SharedModule } from './shared/shared.module';
 
+
+export function HttpLoaderFactory(http: HttpClient): any {
+  return new TranslateHttpLoader(http, "assets/i18n/", ".json");
+}
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthLayoutComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    SharedModule, 
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

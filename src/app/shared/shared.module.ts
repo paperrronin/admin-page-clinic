@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { MaterialModule } from './material.module';
 
 
 
@@ -12,7 +13,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     CommonModule
   ],
   exports:[
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    MaterialModule
   ]
 })
 export class SharedModule { }

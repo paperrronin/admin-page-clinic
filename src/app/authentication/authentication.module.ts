@@ -13,6 +13,7 @@ import { SigninComponent } from './signin/signin.component';
 import { Page404Component } from './page404/page404.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LockedComponent } from './locked/locked.component';
+import {MatSelectModule} from '@angular/material/select'
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { LockedComponent } from './locked/locked.component';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    AuthenticationRoutingModule
+    AuthenticationRoutingModule,
+    MatSelectModule
   ]
 })
 export class AuthenticationModule { }
