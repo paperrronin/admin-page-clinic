@@ -17,6 +17,7 @@ export class DashboardComponent {
     public cardService: CardService) { }
 
   ngOnInit() {
+    debugger
     this.getPatientName()
     this.getCards()
   }

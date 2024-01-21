@@ -363,6 +363,11 @@
  .pill-timing {
    width: 30%;
  }
+
+ .disabled{
+  pointer-events: none;
+  color: #8d8d8e !important;
+ }
  
  @media screen and (min-width: 1400px) {
    .boxed-layout .container {

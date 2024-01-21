@@ -91,6 +91,7 @@
       height: 100vh;
   
       .list {
+        cursor: pointer;
         list-style: none;
         padding-left: 0;
   
@@ -250,7 +251,7 @@
   
           span {
             margin: 7px 0 7px 12px;
-            color: #333;
+            // color: #333;
             // font-weight: bold;
             font-size: 14px;
             overflow: hidden;
@@ -718,5 +719,9 @@
   .collapse.in {
     display: block;
     list-style-type: none;
+  }
+
+  .ml-menu li{
+    cursor: pointer;
   }
   
