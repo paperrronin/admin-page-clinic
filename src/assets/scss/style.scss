@@ -11,6 +11,7 @@
 @import "common/general";
 @import "common/variables";
 @import "common/media";
+@import "common/rtl";
 
 
 
@@ -21,6 +22,7 @@
 @import "./fonts/fontawesome/regular.scss";
 @import "./fonts/fontawesome/solid.scss";
 @import "./fonts/fontawesome/brands.scss";
+@import 'material-icons/iconfont/material-icons.scss';
 
 
 /*                 [3. Components ]                   		*/
@@ -29,6 +31,7 @@
 @import "components/breadcrumbs";
 @import "components/infobox";
 @import "components/navbar";
+@import "components/leftsidebaroverlay";
 
 
 /*                 [4. Pages ]                   			*/

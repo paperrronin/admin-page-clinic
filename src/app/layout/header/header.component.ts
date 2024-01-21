@@ -52,43 +52,43 @@ export class HeaderComponent
   ];
   notifications: any[] = [
     {
-      userImg: "assets/images/user/user1.png",
+      userImg: "assets/images/user/user_1.png",
       userName: "Sarah Smith",
       time: "14 mins ago",
       message: "Please check your mail",
     },
     {
-      userImg: "assets/images/user/user2.png",
+      userImg: "assets/images/user/user_1.png",
       userName: "Airi Satou",
       time: "22 mins ago",
       message: "Work Completed !!!",
     },
     {
-      userImg: "assets/images/user/user1.png",
+      userImg: "assets/images/user/user_1.png",
       userName: "John Doe",
       time: "3 hours ago",
       message: "kindly help me for code.",
     },
     {
-      userImg: "assets/images/user/user2.png",
+      userImg: "assets/images/user/user_1.png",
       userName: "Ashton Cox",
       time: "5 hours ago",
       message: "Lets break for lunch...",
     },
     {
-      userImg: "assets/images/user/user1.png",
+      userImg: "assets/images/user/user_1.png",
       userName: "Sarah Smith",
       time: "14 mins ago",
       message: "Please check your mail",
     },
     {
-      userImg: "assets/images/user/user2.png",
+      userImg: "assets/images/user/user_1.png",
       userName: "Airi Satou",
       time: "22 mins ago",
       message: "Work Completed !!!",
     },
     {
-      userImg: "assets/images/user/user1.png",
+      userImg: "assets/images/user/user_1.png",
       userName: "John Doe",
       time: "3 hours ago",
       message: "kindly help me for code.",
@@ -97,14 +97,17 @@ export class HeaderComponent
   ngOnInit() {
     this.config = this.configService.configData;
     const userRole = this.authService.currentUserValue.data.role;
-    this.userImg = "assets/images/user/user1.png";
+    
 
     if (userRole === "Admin") {
       this.homePage = "admin/dashboard/main";
+      this.userImg = "assets/images/user/admin.png";
     } else if (userRole === "Patient") {
       this.homePage = "patient/dashboard";
+      this.userImg = "assets/images/user/patient.png";
     } else if (userRole === "Doctor") {
       this.homePage = "doctor/dashboard";
+      this.userImg = "assets/images/user/doctor.png";
     } else {
       this.homePage = "admin/dashboard/main";
     }

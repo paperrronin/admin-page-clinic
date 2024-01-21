@@ -9,12 +9,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import { SharedModule } from '../shared/shared.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
 @NgModule({
 
   declarations: [
     AuthLayoutComponent, 
     MainLayoutComponent, 
-    HeaderComponent
+    HeaderComponent, 
+    SidebarComponent
   ],
   imports: [
     CommonModule,

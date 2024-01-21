@@ -20,6 +20,7 @@ import { CoreModule } from './core/core.module';
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { SharedModule } from './shared/shared.module';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
 
 export function HttpLoaderFactory(http: HttpClient): any {
@@ -31,7 +32,8 @@ export function HttpLoaderFactory(http: HttpClient): any {
     AppComponent,
     AuthLayoutComponent,
     MainLayoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
