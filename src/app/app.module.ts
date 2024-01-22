@@ -21,6 +21,7 @@ import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { SharedModule } from './shared/shared.module';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { PageLoaderComponent } from './layout/page-loader/page-loader.component';
 
 
 export function HttpLoaderFactory(http: HttpClient): any {
@@ -33,7 +34,8 @@ export function HttpLoaderFactory(http: HttpClient): any {
     AuthLayoutComponent,
     MainLayoutComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    PageLoaderComponent
   ],
   imports: [
     BrowserModule,

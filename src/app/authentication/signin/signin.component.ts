@@ -62,6 +62,7 @@ export class SigninComponent
           (res) => {
             if (res) {
               setTimeout(() => {
+                console.log(res.data.role)
                 const role = this.authService.currentUserValue.data.role;
                 if (role === Role.Admin) {
                   this.router.navigate(["/admin/dashboard/main"]);
@@ -75,14 +76,19 @@ export class SigninComponent
                 this.loading = false;
               }, 1000);
             } else {
+
               this.error = "Login or password is incorrect!";
             }
           },
           (error) => {
+            if(error.status == 401){
             this.error = "Login or password is incorrect!";
-
+            } else {
+              this.error = "Enable VPN please!"
+            }
             this.submitted = false;
             this.loading = false;
+
           }
         );
     }
