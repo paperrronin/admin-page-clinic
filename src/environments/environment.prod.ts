@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: 'http://localhost:4200',
+    apiUrl: 'https://5ad4a868524f0a13.mokky.dev',
   };
   
