@@ -1,5 +1,5 @@
 # Project in production
-https://https://clinica.000.pe
+https://clinica.000.pe
 
 # Clinic
 
