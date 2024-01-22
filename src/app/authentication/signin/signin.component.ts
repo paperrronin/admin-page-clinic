@@ -59,11 +59,8 @@ export class SigninComponent
       this.subs.sink = this.authService
         .login(this.f['email'].value, this.f['password'].value)
         .subscribe(
-          (res) => {
-            if (res) {
-              setTimeout(() => {
-                console.log(res.data.role)
-                const role = this.authService.currentUserValue.data.role;
+          res => {
+            const role = this.authService.currentUserValue.data.role;
                 if (role === Role.Admin) {
                   this.router.navigate(["/admin/dashboard/main"]);
                 } else if (role === Role.Doctor) {
@@ -74,22 +71,16 @@ export class SigninComponent
                   this.router.navigate(["/authentication/signin"]);
                 }
                 this.loading = false;
-              }, 1000);
-            } else {
-
-              this.error = "Login or password is incorrect!";
-            }
           },
-          (error) => {
-            if(error.status == 401){
-            this.error = "Login or password is incorrect!";
-            } else {
-              this.error = "Enable VPN please!"
-            }
-            this.submitted = false;
-            this.loading = false;
-
-          }
+            err => {
+              if(err.status == 401){
+                  this.error = "Login or password is incorrect!";
+                  } else {
+                    this.error = "Enable VPN please!"
+                  }
+                  this.submitted = false;
+                  this.loading = false;
+            },
         );
     }
   }
